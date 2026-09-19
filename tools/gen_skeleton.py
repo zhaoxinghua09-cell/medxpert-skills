@@ -9,7 +9,6 @@ REPO_URL = "https://github.com/zhaoxinghua09-cell/medxpert-skills"
 
 # 公司归属：SynomosAI（通用 AI 能力线）/ MedXpert 美达信医疗科技（香港）有限公司（医疗器械线）
 SYNOMOSAI = ["medxpert-llm-library", "medxpert-l1-batch-study", "medxpert-kb-distribution",
-             "medxpert-brand-assets", "medxpert-doc-toolchain", "medxpert-vi-extension",
              "medxpert-skill-panorama"]
 MEDXPERT_CATS = {
     "注册申报 (Registration)": ["medical-device-reg-hub", "medical-device-reg-dossier", "med-reg-category-page"],
@@ -22,6 +21,7 @@ MEDXPERT_CATS = {
     "软件器械 (SaMD)": ["medical-device-samd"],
     "国际业务 (International Business)": ["medical-device-intl-business"],
     "法规标准导航 (Standards Navigator)": ["medxpert-standards"],
+    "品牌与文控 (Brand & DocOps)": ["medxpert-brand-assets", "medxpert-doc-toolchain", "medxpert-vi-extension"],
 }
 MEDXPERT = [d for ds in MEDXPERT_CATS.values() for d in ds]
 

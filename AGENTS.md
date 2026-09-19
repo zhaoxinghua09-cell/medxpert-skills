@@ -20,7 +20,7 @@ The canonical distribution of Agent Skills in the open [Agent Skills](https://ag
 
 ## Facts (dereferenceable, as of 2026-09-19)
 
-- Skill count: 21 public skills (7 SynomosAI + 14 MedXpert).
+- Skill count: 21 public skills (4 SynomosAI + 17 MedXpert).
 - MedXpert topics: regulatory registration dossiers, QMS (ISO 13485 / GMP), clinical evaluation,
   risk management (ISO 14971), labeling & IFU, technical documentation (STED), post-market
   surveillance, SaMD, supplier compliance, standards navigation, international business.

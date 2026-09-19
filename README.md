@@ -28,18 +28,15 @@ VS Code (Copilot), Kiro, TRAE, OpenClaw, 扣子 Coze and 30+ compatible clients.
 
 ## 技能目录 / Catalog（21 个）
 
-### 🤖 SynomosAI · 通用 AI 能力线（7 个）
+### 🤖 SynomosAI · 通用 AI 能力线（4 个）
 | 技能 | 一句话用途 |
 |---|---|
 | [`medxpert-llm-library`](skills/medxpert-llm-library/SKILL.md) | 免费 · 免 API Key · 数据不出门——你的旧电脑就能跑大模型、建知识库，不用买显卡（在线版 https://medxpert.cn）。覆盖完整链路——旧电脑硬件自查（0成本）→ Ollama 本地部署（Qwen2.5/DSH 界面）→ 知识库三档搭建 → RAG 检索问答（bge-m3）→ 图书馆管理（分类/版本/检索/质控/权限/保密）→ 内容变现（会员/公众号/技能引流）→ 知识库上公网（官网/IMA/华为/小艺）。触发词：怎么搭知识库/怎么跑大模型/我的电脑能不能跑大模型/低配电脑能跑大模型吗/旧电脑怎么利用/DSH 怎么接 Ollama/多模型怎么分工/怎么做 RAG/知识库怎么变现/图书馆账号怎么做/本地部署/省 API 积分/断网可用/隐私 AI/个人图书馆/企业知识库/远程访问家里的模型/夜间批量任务。边界：专注本地大模型与知识库，不涉及云端 API 部署、编程开发等任务。 |
 | [`medxpert-l1-batch-study`](skills/medxpert-l1-batch-study/SKILL.md) | 用 DSH 任务桥 + 本地 qwen3.5:4b 批量精读一堆文档/知识库枢纽，逐份产出结构化摘要（核心 3 条 + 表格要点 + 疑点）并汇总疑点总表。覆盖任务桥 inbox/outbox 投递-回收、qwen3 think:false 修复、桥超时双修复、后台回收兜底。省 API 积分、断网可用、可复现。何时用：「把这一批文档/枢纽批量精读一遍」「L1 全库精读」「本地模型跑一遍知识库」 |
 | [`medxpert-kb-distribution`](skills/medxpert-kb-distribution/SKILL.md) | 从 MedXpert 项目知识库批量生成分发物料：知识手册（本地模型深度学习）、引流 PDF、GitHub 开源库打包、FAQ 法规引用一致性检查。当用户提到"知识手册"、"引流 PDF"、"github-kb"、"开源知识库"、"检查法规引用"、"check_faq_refs"、"分发物料"、"生成手册"时使用。 |
-| [`medxpert-brand-assets`](skills/medxpert-brand-assets/SKILL.md) | MedXpert 品牌视觉资产生产流水线（logo/头像/封面/二维码/公众号模板包/名片）。以主logo为唯一源，参数配置化驱动，多方案并行+预览总览+版本归档。触发词：生成品牌素材、做头像、做封面、做二维码、改logo、品牌素材、medxpert-brand-assets。 |
-| [`medxpert-doc-toolchain`](skills/medxpert-doc-toolchain/SKILL.md) | MedXpert（美达信医疗）名片风格文档模板工具链。覆盖文档全生命周期：模板生成（T02/T03/T04/三版纸张）→ 收尾流水线（水印/暗纹/动态溯源/AI友好/徽章/解锁）→ 导出（PDF/DOCX）→ 台账编号 → 审批流 → 电子签名 → 中英对照 → 乐享托管。触发词：文档模板、程序文件、doc_templates、收尾流水线、doc_finish、文档台账、doc_ledger、审批流、doc_approval、电子签名、doc_sign、中英对照、doc_bilingual、生成模板、文控体系。 |
-| [`medxpert-vi-extension`](skills/medxpert-vi-extension/SKILL.md) | 基于 MedXpert 已有 VI 规范，在 Ardot 画布上快速延展 PPT 模板、知识手册封面、公众号头像/头图、X 展架/背景板、Skill 安装长图等品牌物料。何时用：在已有 MedXpert 品牌套件基础上，批量补充营销推广/分发所需的物料画板 |
 | [`medxpert-skill-panorama`](skills/medxpert-skill-panorama/SKILL.md) | 将 WorkBuddy Skill 生成 MedXpert + 公司 VI 风格的高清三角度全景图（价值/服务/能力）及评测类雷达图，并按 plugin 编号命名。何时用：需要给新 Skill 补上全景图上架物料 |
 
-### 🏥 MedXpert（美达信医疗科技）· 医疗器械法规线（14 个）
+### 🏥 MedXpert（美达信医疗科技）· 医疗器械法规线（17 个）
 
 **注册申报 (Registration)**
 | 技能 | 一句话用途 |
@@ -94,6 +91,13 @@ VS Code (Copilot), Kiro, TRAE, OpenClaw, 扣子 Coze and 30+ compatible clients.
 | 技能 | 一句话用途 |
 |---|---|
 | [`medxpert-standards`](skills/medxpert-standards/SKILL.md) | 把 MedXpert-RA-Knowledge 医械法规标准知识库装进会话上下文——提供版本判定前置、来源等级话术、缺口标记规则，让没有配置 MCP 的会话也能正确用库。 |
+
+**品牌与文控 (Brand & DocOps)**
+| 技能 | 一句话用途 |
+|---|---|
+| [`medxpert-brand-assets`](skills/medxpert-brand-assets/SKILL.md) | MedXpert 品牌视觉资产生产流水线（logo/头像/封面/二维码/公众号模板包/名片）。以主logo为唯一源，参数配置化驱动，多方案并行+预览总览+版本归档。触发词：生成品牌素材、做头像、做封面、做二维码、改logo、品牌素材、medxpert-brand-assets。 |
+| [`medxpert-doc-toolchain`](skills/medxpert-doc-toolchain/SKILL.md) | MedXpert（美达信医疗）名片风格文档模板工具链。覆盖文档全生命周期：模板生成（T02/T03/T04/三版纸张）→ 收尾流水线（水印/暗纹/动态溯源/AI友好/徽章/解锁）→ 导出（PDF/DOCX）→ 台账编号 → 审批流 → 电子签名 → 中英对照 → 乐享托管。触发词：文档模板、程序文件、doc_templates、收尾流水线、doc_finish、文档台账、doc_ledger、审批流、doc_approval、电子签名、doc_sign、中英对照、doc_bilingual、生成模板、文控体系。 |
+| [`medxpert-vi-extension`](skills/medxpert-vi-extension/SKILL.md) | 基于 MedXpert 已有 VI 规范，在 Ardot 画布上快速延展 PPT 模板、知识手册封面、公众号头像/头图、X 展架/背景板、Skill 安装长图等品牌物料。何时用：在已有 MedXpert 品牌套件基础上，批量补充营销推广/分发所需的物料画板 |
 
 ## 适用范围 / Scope
 
