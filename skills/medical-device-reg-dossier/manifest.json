@@ -1,0 +1,16 @@
+{
+  "files": [
+    {
+      "path": "LICENSE.md",
+      "sha256": "129dafa2c3484fd21fbf16b25168321b9a3aac89041b72edfb7f280c763e353b"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "913545f33aff344c3d4581551abc49380f1f2aab7ba014ed14a4f017c72bbc76"
+    }
+  ],
+  "generated_utc": "2026-08-26T06:08:12Z",
+  "license": "MIT",
+  "manifest_sha256": "aee841ae51e63b8cab4e193028e17a73006900154ab0b0691d1a276a6263b043",
+  "skill": "medical-device-reg-dossier"
+}

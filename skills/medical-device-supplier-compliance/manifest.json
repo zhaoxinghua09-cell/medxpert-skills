@@ -1,0 +1,40 @@
+{
+  "files": [
+    {
+      "path": "LICENSE.md",
+      "sha256": "129dafa2c3484fd21fbf16b25168321b9a3aac89041b72edfb7f280c763e353b"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "414a4c36aecbb3d12341f8879634cf17483ed752bd895061cdc45555f0efb33b"
+    },
+    {
+      "path": "tmp2ajx5m3g.tmp",
+      "sha256": "414a4c36aecbb3d12341f8879634cf17483ed752bd895061cdc45555f0efb33b"
+    },
+    {
+      "path": "tmp96whalo0.tmp",
+      "sha256": "414a4c36aecbb3d12341f8879634cf17483ed752bd895061cdc45555f0efb33b"
+    },
+    {
+      "path": "tmpazag586b.tmp",
+      "sha256": "414a4c36aecbb3d12341f8879634cf17483ed752bd895061cdc45555f0efb33b"
+    },
+    {
+      "path": "tmpcf9r8q0w.tmp",
+      "sha256": "414a4c36aecbb3d12341f8879634cf17483ed752bd895061cdc45555f0efb33b"
+    },
+    {
+      "path": "tmpd2chj7cl.tmp",
+      "sha256": "414a4c36aecbb3d12341f8879634cf17483ed752bd895061cdc45555f0efb33b"
+    },
+    {
+      "path": "tmpujxvz81d.tmp",
+      "sha256": "414a4c36aecbb3d12341f8879634cf17483ed752bd895061cdc45555f0efb33b"
+    }
+  ],
+  "generated_utc": "2026-08-26T06:12:39Z",
+  "license": "MIT",
+  "manifest_sha256": "9bc6fc4389d45e0342f10f66339f3fdfc703824dbfbb20d1d30f738d4b861847",
+  "skill": "medical-device-supplier-compliance"
+}
