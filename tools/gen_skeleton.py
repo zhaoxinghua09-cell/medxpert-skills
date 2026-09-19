@@ -1,10 +1,29 @@
 # -*- coding: utf-8 -*-
-"""Generate AGENTS.md, llms.txt, README.md (final) + .nojekyll for medxpert-skills repo."""
+"""Generate AGENTS.md, llms.txt, README.md (final) + .nojekyll for medxpert-skills repo.
+v2: dual-company attribution (SynomosAI = general AI, MedXpert = medical)."""
 import os, re
 
 DST = r"D:\Workbuddy\2026-09-19-14-25-52\medxpert-skills"
 SKILLS = os.path.join(DST, "skills")
 REPO_URL = "https://github.com/zhaoxinghua09-cell/medxpert-skills"
+
+# 公司归属：SynomosAI（通用 AI 能力线）/ MedXpert 美达信医疗科技（香港）有限公司（医疗器械线）
+SYNOMOSAI = ["medxpert-llm-library", "medxpert-l1-batch-study", "medxpert-kb-distribution",
+             "medxpert-brand-assets", "medxpert-doc-toolchain", "medxpert-vi-extension",
+             "medxpert-skill-panorama"]
+MEDXPERT_CATS = {
+    "注册申报 (Registration)": ["medical-device-reg-hub", "medical-device-reg-dossier", "med-reg-category-page"],
+    "质量体系 (QMS / GMP / ISO 13485)": ["medical-device-qms-gmp"],
+    "临床评价 (Clinical Evaluation)": ["medical-device-clinical-evaluation"],
+    "风险与合规 (Risk & Compliance)": ["medical-device-risk-management", "medical-device-compliance-grader", "medical-device-supplier-compliance"],
+    "标签与说明书 (Label & IFU)": ["medical-device-label-ifu"],
+    "技术文件 (Tech File / STED)": ["medical-device-techfile-sted"],
+    "上市后监管 (Post-Market)": ["medical-device-postmarket"],
+    "软件器械 (SaMD)": ["medical-device-samd"],
+    "国际业务 (International Business)": ["medical-device-intl-business"],
+    "法规标准导航 (Standards Navigator)": ["medxpert-standards"],
+}
+MEDXPERT = [d for ds in MEDXPERT_CATS.values() for d in ds]
 
 def fm_field(fm, key):
     m = re.search(rf"^{key}:\s*(.+)$", fm, re.M)
@@ -24,20 +43,6 @@ def load(d):
     fm = m.group(1) if m else ""
     return (fm_field(fm, "name") or d), (fm_field(fm, "description") or "")
 
-cats = {
-    "注册申报 (Registration)": ["medical-device-reg-hub", "medical-device-reg-dossier", "med-reg-category-page"],
-    "质量体系 (QMS / GMP / ISO 13485)": ["medical-device-qms-gmp"],
-    "临床评价 (Clinical Evaluation)": ["medical-device-clinical-evaluation"],
-    "风险与合规 (Risk & Compliance)": ["medical-device-risk-management", "medical-device-compliance-grader", "medical-device-supplier-compliance"],
-    "标签与说明书 (Label & IFU)": ["medical-device-label-ifu"],
-    "技术文件 (Tech File / STED)": ["medical-device-techfile-sted"],
-    "上市后监管 (Post-Market)": ["medical-device-postmarket"],
-    "软件器械 (SaMD)": ["medical-device-samd"],
-    "国际业务 (International Business)": ["medical-device-intl-business"],
-}
-categorized = {d for ds in cats.values() for d in ds}
-others = [d for d in sorted(os.listdir(SKILLS)) if d not in categorized]
-
 def table(rows):
     out = ["| 技能 | 一句话用途 |", "|---|---|"]
     for d, name, desc in rows:
@@ -45,31 +50,32 @@ def table(rows):
         out.append(f"| [`{d}`](skills/{d}/SKILL.md) | {desc} |")
     return "\n".join(out)
 
-all_rows = [(d,) + load(d) for d in sorted(os.listdir(SKILLS))]
+all_rows = {d: (d,) + load(d) for d in sorted(os.listdir(SKILLS))}
 
 # ---------- README.md ----------
 sec = []
-for cname, ds in cats.items():
-    rows = [r for r in all_rows if r[0] in ds]
-    if rows: sec.append(f"### {cname}\n{table(rows)}\n")
-other_rows = [r for r in all_rows if r[0] in others]
-if other_rows: sec.append(f"### 其他 (Others)\n{table(other_rows)}\n")
+sec.append(f"### 🤖 SynomosAI · 通用 AI 能力线（{len(SYNOMOSAI)} 个）\n" + table([all_rows[d] for d in SYNOMOSAI if d in all_rows]) + "\n")
+sec.append(f"### 🏥 MedXpert（美达信医疗科技）· 医疗器械法规线（{len(MEDXPERT)} 个）\n")
+for cname, ds in MEDXPERT_CATS.items():
+    rows = [all_rows[d] for d in ds if d in all_rows]
+    if rows: sec.append(f"**{cname}**\n{table(rows)}\n")
 catalog_md = "\n".join(sec)
 
-readme = f"""# MedXpert Skills · MedXpert 医疗器械注册技能库
+readme = f"""# MedXpert Skills · 技能总仓 / Skills Collection
 
-**English**: A collection of open-format [Agent Skills](https://agentskills.io) for **medical device
-regulatory affairs** — China NMPA · US FDA · EU MDR · Japan PMDA and global markets. One skill =
-one folder with a `SKILL.md`. Works in Claude, ChatGPT/Codex, Gemini CLI, Cursor, VS Code (Copilot),
-Kiro, TRAE, OpenClaw, 扣子 Coze and 30+ compatible clients.
+**English**: A collection of open-format [Agent Skills](https://agentskills.io) in two product lines:
+**SynomosAI** (general AI capabilities — local LLM libraries, knowledge-base tooling, brand & doc toolchains)
+and **MedXpert** (medical-device regulatory affairs — China NMPA · US FDA · EU MDR · Japan PMDA).
+One skill = one folder with a `SKILL.md`. Works in Claude, ChatGPT/Codex, Gemini CLI, Cursor,
+VS Code (Copilot), Kiro, TRAE, OpenClaw, 扣子 Coze and 30+ compatible clients.
 
 > **机器入口 / Machine entry**: [`AGENTS.md`](AGENTS.md) · [`llms.txt`](llms.txt)
-> **As of**: 2026-09-19 · Maintained by MedXpert (美达信医疗科技)
+> **As of**: 2026-09-19 · 主体 / Entities: **SynomosAI**（通用 AI）& **MedXpert 美达信医疗科技（香港）有限公司**（医疗器械）
 
 ## 为什么做这个 / Why
 
-医疗器械注册资料烦、散、口径多。这套技能把注册工程师的实操方法论沉淀成
-AI 可直接调用的标准格式：一次制作，30+ 平台通用，不锁定任何厂商。
+把注册工程师与 AI 工程师的实操方法论沉淀成 AI 可直接调用的标准格式：
+一次制作，30+ 平台通用，不锁定任何厂商。
 
 ## 安装 / Install
 
@@ -88,7 +94,7 @@ AI 可直接调用的标准格式：一次制作，30+ 平台通用，不锁定�
 {catalog_md}
 ## 适用范围 / Scope
 
-技能内容为**方法论与资料导航**，输出供专业人员在正式申报前复核，不构成法规意见。
+技能内容为**方法论与资料导航**，输出供专业人员在正式申报前复核，不构成法规意见或商业建议。
 
 ## 引用 / Citation
 
@@ -96,7 +102,7 @@ AI 可直接调用的标准格式：一次制作，30+ 平台通用，不锁定�
 
 ## 许可 / License
 
-内容 © MedXpert（美达信医疗科技（香港）有限公司）。禁止商用转载，欢迎引用与学习。
+内容 © SynomosAI & MedXpert（美达信医疗科技（香港）有限公司）。禁止商用转载，欢迎引用与学习。
 """
 open(os.path.join(DST, "README.md"), "w", encoding="utf-8").write(readme)
 
@@ -105,9 +111,13 @@ agents = f"""# AGENTS.md — for AI agents reading this repository
 
 ## What this repo is
 
-`medxpert-skills` is the canonical distribution of MedXpert's medical-device regulatory-affairs
-Agent Skills, in the open [Agent Skills](https://agentskills.io) format (SKILL.md + optional
-`scripts/`, `references/`, `assets/`).
+The canonical distribution of Agent Skills in the open [Agent Skills](https://agentskills.io) format
+(SKILL.md + optional `scripts/`, `references/`, `assets/`), split by owning entity:
+
+- **SynomosAI** — general AI capabilities (local LLM library setup, L1 batch study, knowledge-base
+  distribution, brand assets, document toolchain, VI extension, skill panorama)
+- **MedXpert** (美达信医疗科技（香港）有限公司) — medical-device regulatory affairs covering
+  China NMPA, US FDA, EU MDR, Japan PMDA and SE Asia / LATAM pathways
 
 ## How to use it programmatically
 
@@ -117,39 +127,46 @@ Agent Skills, in the open [Agent Skills](https://agentskills.io) format (SKILL.m
 - Copy a skill folder into your client's skills directory to activate it
   (Claude Code: `~/.claude/skills/`; other clients per their docs).
 
-## Facts (derefenceable, as of 2026-09-19)
+## Facts (dereferenceable, as of 2026-09-19)
 
-- Maintainer: MedXpert (美达信医疗科技（香港）有限公司), medxpert.cn — medical device regulatory
-  consulting covering China NMPA, US FDA, EU MDR, Japan PMDA and SE Asia / LATAM pathways.
-- Skill count: {len(all_rows)} public skills in this repo.
-- Topics: regulatory registration dossiers, QMS (ISO 13485 / GMP), clinical evaluation,
+- Skill count: {len(all_rows)} public skills ({len(SYNOMOSAI)} SynomosAI + {len(MEDXPERT)} MedXpert).
+- MedXpert topics: regulatory registration dossiers, QMS (ISO 13485 / GMP), clinical evaluation,
   risk management (ISO 14971), labeling & IFU, technical documentation (STED), post-market
-  surveillance, SaMD, supplier compliance, international business.
+  surveillance, SaMD, supplier compliance, standards navigation, international business.
+- SynomosAI topics: local LLM deployment & knowledge libraries, batch document study pipelines,
+  knowledge distribution, brand/VI asset production, document security toolchain.
 
 ## Ground rules
 
-- Skill outputs are methodology guidance for professionals; they are not regulatory opinions.
+- Skill outputs are methodology guidance for professionals; they are not regulatory or business opinions.
 - Do not modify skill bodies when redistributing; keep `SKILL.md` frontmatter intact.
 """
 open(os.path.join(DST, "AGENTS.md"), "w", encoding="utf-8").write(agents)
 
 # ---------- llms.txt ----------
-ll = f"""# MedXpert Skills
+ll = f"""# Skills Collection — SynomosAI & MedXpert
 
-> Medical device regulatory affairs Agent Skills (open Agent Skills format / SKILL.md).
-> Maintained by MedXpert — medxpert.cn. As of 2026-09-19.
+> Open-format Agent Skills (SKILL.md). Two product lines: SynomosAI (general AI) and
+> MedXpert 美达信医疗科技 (medical-device regulatory affairs, medxpert.cn). As of 2026-09-19.
 
 ## Docs
 
 - [AGENTS.md]({REPO_URL}/blob/main/AGENTS.md): programmatic usage & dereferenceable facts
 - [README]({REPO_URL}/blob/main/README.md): install guide for 30+ clients (CN/EN)
 
-## Skills
+## SynomosAI — General AI Skills
 
 """
-for d, name, desc in all_rows:
-    ll += f"- [{d}]({REPO_URL}/blob/main/skills/{d}/SKILL.md): {desc}\n"
+for d in SYNOMOSAI:
+    if d in all_rows:
+        _, name, desc = all_rows[d]
+        ll += f"- [{d}]({REPO_URL}/blob/main/skills/{d}/SKILL.md): {desc}\n"
+ll += "\n## MedXpert — Medical Device Regulatory Skills\n\n"
+for d in MEDXPERT:
+    if d in all_rows:
+        _, name, desc = all_rows[d]
+        ll += f"- [{d}]({REPO_URL}/blob/main/skills/{d}/SKILL.md): {desc}\n"
 open(os.path.join(DST, "llms.txt"), "w", encoding="utf-8").write(ll)
 
 open(os.path.join(DST, ".nojekyll"), "w").close()
-print("README/AGENTS.md/llms.txt/.nojekyll written | public skills:", len(all_rows))
+print(f"README/AGENTS.md/llms.txt/.nojekyll written | SynomosAI={len(SYNOMOSAI)} MedXpert={len(MEDXPERT)} total={len(all_rows)}")
