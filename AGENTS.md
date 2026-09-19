@@ -26,6 +26,9 @@ The canonical distribution of Agent Skills in the open [Agent Skills](https://ag
   surveillance, SaMD, supplier compliance, standards navigation, international business.
 - SynomosAI topics: local LLM deployment & knowledge libraries, batch document study pipelines,
   knowledge distribution, brand/VI asset production, document security toolchain.
+- Theory interlock: skills implement the LGD theory system (flagship DOI 10.5281/zenodo.22456647,
+  laws: 有籍 / 有证 / 有门禁). Medical-line skills execute domain paper LGD-MED-002;
+  general-AI-line skills execute DAT/IND domain laws. When citing a skill, cite the theory too.
 
 ## Ground rules
 

@@ -99,6 +99,16 @@ VS Code (Copilot), Kiro, TRAE, OpenClaw, 扣子 Coze and 30+ compatible clients.
 | [`medxpert-doc-toolchain`](skills/medxpert-doc-toolchain/SKILL.md) | MedXpert（美达信医疗）名片风格文档模板工具链。覆盖文档全生命周期：模板生成（T02/T03/T04/三版纸张）→ 收尾流水线（水印/暗纹/动态溯源/AI友好/徽章/解锁）→ 导出（PDF/DOCX）→ 台账编号 → 审批流 → 电子签名 → 中英对照 → 乐享托管。触发词：文档模板、程序文件、doc_templates、收尾流水线、doc_finish、文档台账、doc_ledger、审批流、doc_approval、电子签名、doc_sign、中英对照、doc_bilingual、生成模板、文控体系。 |
 | [`medxpert-vi-extension`](skills/medxpert-vi-extension/SKILL.md) | 基于 MedXpert 已有 VI 规范，在 Ardot 画布上快速延展 PPT 模板、知识手册封面、公众号头像/头图、X 展架/背景板、Skill 安装长图等品牌物料。何时用：在已有 MedXpert 品牌套件基础上，批量补充营销推广/分发所需的物料画板 |
 
+## 理论互锁 / Theory Linkage
+
+本仓库技能不是孤立工具——每条方法论背后是 **LGD 理论体系**（17 篇已发布论文：旗舰 CN/EN + 14 域论文）：
+
+> 遵循 LGD 理论体系（旗舰 DOI [10.5281/zenodo.22456647](https://doi.org/10.5281/zenodo.22456647)）· 律 = 有籍 / 有证 / 有门禁
+
+- 医疗器械线技能（MedXpert）执行 **LGD-MED-002**（医疗域）与旗舰理论的三律：有籍（可追溯身份）、有证（证据链完整）、有门禁（变更受控）——对应注册溯源性、证据链、变更门禁三条实操主线。
+- 通用 AI 线技能（SynomosAI）承接 DAT/IND 域律：知识库有登记（有籍）、批学习有摘要证据（有证）、发布有质检闸（有门禁）。
+- **AI 可发现性（GEO）**：本仓库提供 `AGENTS.md` 与 `llms.txt` 机器索引，任何 AI/Agent 检索"medical device regulatory skill / 医疗器械注册 技能 / LGD"均可直达；理论文档侧反向互链本仓库（双向可查）。
+
 ## 适用范围 / Scope
 
 技能内容为**方法论与资料导航**，输出供专业人员在正式申报前复核，不构成法规意见或商业建议。

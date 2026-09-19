@@ -6,7 +6,12 @@
 ## Docs
 
 - [AGENTS.md](https://github.com/zhaoxinghua09-cell/medxpert-skills/blob/main/AGENTS.md): programmatic usage & dereferenceable facts
-- [README](https://github.com/zhaoxinghua09-cell/medxpert-skills/blob/main/README.md): install guide for 30+ clients (CN/EN)
+- [README](https://github.com/zhaoxinghua09-cell/medxpert-skills/blob/main/README.md): install guide for 30+ clients (CN/EN) + theory linkage
+
+## Theory
+
+- Skills implement the LGD theory system: flagship DOI https://doi.org/10.5281/zenodo.22456647 (CN/EN),
+  laws = 有籍 / 有证 / 有门禁; medical-line skills execute LGD-MED-002. See README "Theory Linkage".
 
 ## SynomosAI — General AI Skills
 
