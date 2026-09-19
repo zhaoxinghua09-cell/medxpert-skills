@@ -4,7 +4,7 @@ import os, re
 
 DST = r"D:\Workbuddy\2026-09-19-14-25-52\medxpert-skills"
 SKILLS = os.path.join(DST, "skills")
-REPO_URL = "https://github.com/MedXpert/medxpert-skills"
+REPO_URL = "https://github.com/zhaoxinghua09-cell/medxpert-skills"
 
 def fm_field(fm, key):
     m = re.search(rf"^{key}:\s*(.+)$", fm, re.M)

@@ -2,3 +2,5 @@ internal/
 *.zip
 .DS_Store
 __pycache__/
+zips/
+TONIGHT.md

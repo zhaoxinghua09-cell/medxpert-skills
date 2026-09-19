@@ -17,7 +17,7 @@ AI 可直接调用的标准格式：一次制作，30+ 平台通用，不锁定�
 
 | 客户端 | 方法 |
 |---|---|
-| Claude Code / Claude | `git clone https://github.com/MedXpert/medxpert-skills.git && cp -r medxpert-skills/skills/<skill> ~/.claude/skills/` |
+| Claude Code / Claude | `git clone https://github.com/zhaoxinghua09-cell/medxpert-skills.git && cp -r medxpert-skills/skills/<skill> ~/.claude/skills/` |
 | Cursor / VS Code (Copilot) / Kiro / TRAE | 将 `skills/<skill>/` 放入对应 skills 目录（见各家文档） |
 | Codex CLI / Gemini CLI | 支持读取 Agent Skills 目录，指向本仓库 clone 路径 |
 | 扣子 Coze（豆包生态） | 技能商店导入 → 上传 `skills/<skill>` 打包的 zip（SKILL.md 在包根目录） |
