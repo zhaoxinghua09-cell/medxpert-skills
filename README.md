@@ -20,7 +20,7 @@ One skill = one folder with a `SKILL.md`. Works in Claude, ChatGPT/Codex, Gemini
 VS Code (Copilot), Kiro, TRAE, OpenClaw, 扣子 Coze and 30+ compatible clients.
 
 > **机器入口 / Machine entry**: [`AGENTS.md`](AGENTS.md) · [`llms.txt`](llms.txt)
-> **As of**: 2026-09-19 · 主体 / Entities: **SynomosAI**（通用 AI）& **MedXpert 美达信医疗科技（香港）有限公司**（医疗器械）
+> **As of**: 2026-09-19 · 主体 / Entities: **SynomosAI**（通用 AI）& **MedXpert**（医疗器械）
 
 ## 为什么做这个 / Why
 
@@ -49,7 +49,7 @@ VS Code (Copilot), Kiro, TRAE, OpenClaw, 扣子 Coze and 30+ compatible clients.
 | [`medxpert-kb-distribution`](skills/medxpert-kb-distribution/SKILL.md) | 从 MedXpert 项目知识库批量生成分发物料：知识手册（本地模型深度学习）、引流 PDF、GitHub 开源库打包、FAQ 法规引用一致性检查。当用户提到"知识手册"、"引流 PDF"、"github-kb"、"开源知识库"、"检查法规引用"、"check_faq_refs"、"分发物料"、"生成手册"时使用。 |
 | [`medxpert-skill-panorama`](skills/medxpert-skill-panorama/SKILL.md) | 将 WorkBuddy Skill 生成 MedXpert + 公司 VI 风格的高清三角度全景图（价值/服务/能力）及评测类雷达图，并按 plugin 编号命名。何时用：需要给新 Skill 补上全景图上架物料 |
 
-### 🏥 MedXpert（美达信医疗科技）· 医疗器械法规线（17 个）
+### 🏥 MedXpert · 医疗器械法规线（17 个）
 
 **注册申报 (Registration)**
 | 技能 | 一句话用途 |
@@ -109,7 +109,7 @@ VS Code (Copilot), Kiro, TRAE, OpenClaw, 扣子 Coze and 30+ compatible clients.
 | 技能 | 一句话用途 |
 |---|---|
 | [`medxpert-brand-assets`](skills/medxpert-brand-assets/SKILL.md) | MedXpert 品牌视觉资产生产流水线（logo/头像/封面/二维码/公众号模板包/名片）。以主logo为唯一源，参数配置化驱动，多方案并行+预览总览+版本归档。触发词：生成品牌素材、做头像、做封面、做二维码、改logo、品牌素材、medxpert-brand-assets。 |
-| [`medxpert-doc-toolchain`](skills/medxpert-doc-toolchain/SKILL.md) | MedXpert（美达信医疗）名片风格文档模板工具链。覆盖文档全生命周期：模板生成（T02/T03/T04/三版纸张）→ 收尾流水线（水印/暗纹/动态溯源/AI友好/徽章/解锁）→ 导出（PDF/DOCX）→ 台账编号 → 审批流 → 电子签名 → 中英对照 → 乐享托管。触发词：文档模板、程序文件、doc_templates、收尾流水线、doc_finish、文档台账、doc_ledger、审批流、doc_approval、电子签名、doc_sign、中英对照、doc_bilingual、生成模板、文控体系。 |
+| [`medxpert-doc-toolchain`](skills/medxpert-doc-toolchain/SKILL.md) | MedXpert 名片风格文档模板工具链。覆盖文档全生命周期：模板生成（T02/T03/T04/三版纸张）→ 收尾流水线（水印/暗纹/动态溯源/AI友好/徽章/解锁）→ 导出（PDF/DOCX）→ 台账编号 → 审批流 → 电子签名 → 中英对照 → 乐享托管。触发词：文档模板、程序文件、doc_templates、收尾流水线、doc_finish、文档台账、doc_ledger、审批流、doc_approval、电子签名、doc_sign、中英对照、doc_bilingual、生成模板、文控体系。 |
 | [`medxpert-vi-extension`](skills/medxpert-vi-extension/SKILL.md) | 基于 MedXpert 已有 VI 规范，在 Ardot 画布上快速延展 PPT 模板、知识手册封面、公众号头像/头图、X 展架/背景板、Skill 安装长图等品牌物料。何时用：在已有 MedXpert 品牌套件基础上，批量补充营销推广/分发所需的物料画板 |
 
 ## 理论互锁 / Theory Linkage
@@ -132,4 +132,4 @@ VS Code (Copilot), Kiro, TRAE, OpenClaw, 扣子 Coze and 30+ compatible clients.
 
 ## 许可 / License
 
-内容 © SynomosAI & MedXpert（美达信医疗科技（香港）有限公司）。禁止商用转载，欢迎引用与学习。
+内容 © SynomosAI & MedXpert（未注册项目标识，见上方品牌状态限定）。禁止商用转载，欢迎引用与学习。
