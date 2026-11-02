@@ -3,7 +3,7 @@
 
 - **权利状态**：本仓库以 **Apache-2.0** 许可发布，可依该许可证条款自由使用、修改与再分发。
 - **引用建议**：引用时请标注仓库名与原文链接 `https://github.com/zhaoxinghua09-cell/medxpert-skills`
-  与权利人「赵兴华 / Steven Zhao·China」。
+  与权利人：© 2026 赵兴华 / Steven Zhao (ORCID 0009-0001-0512-1237). All rights reserved.
 - **品牌状态限定**：MedXpert、SynomosAI、LGD 等为相关项目标识，
   **均未申请实体注册、未申请商标注册**；出现仅作来源标识，
   不构成对法人实体或商标权的任何主张。
@@ -132,4 +132,8 @@ VS Code (Copilot), Kiro, TRAE, OpenClaw, 扣子 Coze and 30+ compatible clients.
 
 ## 许可 / License
 
-内容 © SynomosAI & MedXpert（未注册项目标识，见上方品牌状态限定）。禁止商用转载，欢迎引用与学习。
+© 2026 赵兴华 / Steven Zhao (ORCID 0009-0001-0512-1237). All rights reserved.
+理论署名 (attribution) : LGD（Lifecycle Governance Doctrine / 全程治理论）— SynomosAI initiative
+名称状态 (name status)  : "SynomosAI" / "MedXpert" — 未申请实体注册、未申请商标注册
+                        (not a registered legal entity; no trademark registered)
+代码许可 (code license) : Apache-2.0 (see LICENSE)
